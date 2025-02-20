@@ -3,12 +3,19 @@ export interface simpleBlogCard {
     smallDescription: string
     currentSlug: string
     titleImage: { asset: { url: string } }
-    categories: any
+    categories: string[]
 }
 
 export interface blogArticle {
     title: string
-    content: any
+    content: {
+        _type: string;
+        children: Array<{
+            _type: string;
+            text: string;
+            marks?: string[];
+        }>;
+    }[];
     currentSlug: string
     titleImage: { asset: { url: string } };
 }
@@ -31,5 +38,10 @@ export interface Testimonial {
     location: string
     age: number
     quote: string
-    image: any
+    image: {
+        asset: {
+            url: string;
+            _ref: string;
+        };
+    };
 }
