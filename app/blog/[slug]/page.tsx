@@ -23,7 +23,8 @@ async function getData(slug: string) {
 export default async function BlogArticle({
     params,
 }: {
-    params: { slug: string }
+    params: { slug: string };
+    searchParams?: { [key: string]: string | string[] | undefined };
 }) {
     const data: blogArticle = await getData(params.slug);
     return (
