@@ -18,8 +18,12 @@ async function getData(slug: string) {
     return data;
 }
 
-export default async function BlogArticle({ params } : { params: {slug: string}}) {
-    const data : blogArticle = await getData(params.slug);
+export default async function BlogArticle({
+    params,
+}: {
+    params: { slug: string }
+} & { searchParams?: { [key: string]: string | string[] | undefined } }) {
+    const data: blogArticle = await getData(params.slug);
     return (
         <div className="my-5 w-full">
             <h1>
@@ -35,7 +39,7 @@ export default async function BlogArticle({ params } : { params: {slug: string}}
                 alt="Image" 
                 width={1080} 
                 height={800}
-                className="w-full max-h-[600px] rounded-lg object-cover mt-8 border mx-auto" 
+                className="w-fulal max-h-[600px] rounded-lg object-cover mt-8 border mx-auto" 
             />
             <div className="mt-16 prose prose-md mx-auto">
                 <PortableText value={data.content} />
