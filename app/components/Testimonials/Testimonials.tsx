@@ -2,6 +2,8 @@ import { client } from "../../lib/sanity";
 import { Testimonial } from "../../lib/interface"
 import TestimonialsClient from "./TestimonialsClient";
 
+export const revalidate = 15;
+
 async function getTestimonials() {
     const query = `
         *[_type == 'testimonials'] | order(_updatedAt asc) {
