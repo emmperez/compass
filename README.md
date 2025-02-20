@@ -33,8 +33,8 @@ To get the project up and running locally, follow these steps:
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/compass-blog.git
-cd compass-blog
+git clone https://github.com/emmperez/compass.git
+cd compass
 ```
 
 ### 2. Install dependencies
