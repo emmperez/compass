@@ -15,7 +15,7 @@ export default function OurStory() {
                         </div>
                         <div className="image_container flex flex-wrap lg:flex-nowrap justify-center xl:justify-start mb-8 lg:mb-12 xl:mb-0 lg:mt-12 xl:mt-24 gap-4">
                             <video className="w-full lg:w-1/2 xl:w-2/5 object-cover rounded-lg" autoPlay muted loop playsInline>
-                                <source src="/compass.mp4" type="video/mp4" />
+                                <source src="https://ae5ho4crkvmyptmy.public.blob.vercel-storage.com/COMPASS-1wOQ8SjCzMh8NRo1NyAo9iGTnNdYDQ.mp4" type="video/mp4" />
                             </video>
                             <Image 
                                 src='/compass-ceo-headshot.jpg'
