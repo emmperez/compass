@@ -15,12 +15,10 @@ export default function BlogClient({ posts }: { posts: simpleBlogCard[] }) {
     setVisiblePosts(prev => prev + 3);
   };
 
-  // Get unique categories from all posts
   const uniqueCategories = Array.from(new Set(
     posts.flatMap(post => post.categories || [])
   )).sort();
 
-  // Filter posts based on selected category
   const filteredPosts = selectedCategory
     ? posts.filter(post => post.categories?.includes(selectedCategory))
     : posts;
@@ -56,13 +54,17 @@ export default function BlogClient({ posts }: { posts: simpleBlogCard[] }) {
         <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 mt-5 mb-5 gap-5">
           {filteredPosts.slice(0, visiblePosts).map((post, idx) => (
             <Card key={idx}>
-              <Image 
-                src={urlFor(post.titleImage).url()} 
-                alt="Image"
-                width={500}
-                height={500}
-                className="rounded-t-lg object-cover w-full"
-              />
+              {post.titleImage ? (
+                <Image 
+                  src={urlFor(post.titleImage).url()} 
+                  alt="Image"
+                  width={500}
+                  height={300}
+                  className="rounded-t-lg object-cover w-full h-[300px]"
+                />
+              ) : (
+                <div className="h-[300px] bg-gray-200 rounded-t-lg" />
+              )}
               <CardContent className="mt-5 flex flex-col h-[200px]">
                 <div className="flex-grow">
                   <h3 className="text-lg line-clamp-2 mb-2">{post.title}</h3>
