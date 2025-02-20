@@ -39,7 +39,7 @@ export default async function BlogArticle({
                 alt="Image" 
                 width={1080} 
                 height={800}
-                className="w-fulal max-h-[600px] rounded-lg object-cover mt-8 border mx-auto" 
+                className="w-full max-h-[600px] rounded-lg object-cover mt-8 border" 
             />
             <div className="mt-16 prose prose-md mx-auto">
                 <PortableText value={data.content} />
