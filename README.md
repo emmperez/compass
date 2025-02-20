@@ -71,5 +71,3 @@ Feel free to fork the repo and submit pull requests. If you encounter any issues
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
-
-This version includes the mention of TypeScript and Tailwind CSS, reflecting the full tech stack you used!
