@@ -2,7 +2,7 @@ import BlogClient from './BlogClient';
 import { client } from "../../lib/sanity";
 import { simpleBlogCard } from "../../lib/interface";
 
-export const revalidate = 30;
+export const revalidate = 15;
 
 async function getData() {
   const query = `

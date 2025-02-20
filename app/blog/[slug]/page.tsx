@@ -6,7 +6,7 @@ import { PortableText } from "next-sanity";
 import Testimonials from "@/app/components/Testimonials/Testimonials";
 import Footer from "@/app/components/Footer/Footer";    
 
-export const revalidate = 30;
+export const revalidate = 15;
 
 async function getData(slug: string) {
     const query = `
