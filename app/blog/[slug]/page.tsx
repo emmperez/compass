@@ -5,6 +5,7 @@ import { urlFor } from "@/app/lib/sanity";
 import { PortableText } from "next-sanity";
 import Testimonials from "@/app/components/Testimonials/Testimonials";
 import Footer from "@/app/components/Footer/Footer";    
+import { Params } from 'next/dist/shared/lib/router/utils/route-matcher'
 
 export const revalidate = 30;
 
@@ -20,7 +21,11 @@ async function getData(slug: string) {
     return data;
 }
 
-export default async function BlogArticle({params }: {params: { slug: string }}) {
+export default async function BlogArticle({
+    params,
+}: {
+    params: Params & { slug: string }
+}) {
     const data: blogArticle = await getData(params.slug);
     return (
         <>

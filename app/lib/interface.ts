@@ -1,18 +1,18 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+import { PortableTextBlock } from '@portabletext/types'
 
 export interface simpleBlogCard {
     title: string
     smallDescription: string
     currentSlug: string
     titleImage: { asset: { url: string } }
-    categories: any
+    categories: string[]
 }
 
 export interface blogArticle {
     title: string
-    content: any
+    content: PortableTextBlock[]
     currentSlug: string
-    titleImage: { asset: { url: string } };
+    titleImage: { asset: { url: string } }
 }
 
 export interface featuredArticle {
