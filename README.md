@@ -6,6 +6,8 @@ Thanks for the update! Here's the updated README with TypeScript and Tailwind in
 
 **Compass** is a wellness blog built using **Next.js**, **TypeScript**, **Tailwind CSS**, and **Sanity**. The blog focuses on providing insightful articles, tips, and resources for well-being, including mental health, fitness, nutrition, and more. It is designed with a clean and modern interface, offering an intuitive user experience.
 
+https://compass-pied.vercel.app/
+
 ## Technologies Used
 
 - **Next.js**: A React framework for building server-side rendered (SSR) and static web applications.
