@@ -1,4 +1,3 @@
-import { notFound } from "next/navigation";
 import { client } from "@/app/lib/sanity";
 import { blogArticle } from "@/app/lib/interface";
 import Image from "next/image";
@@ -9,47 +8,38 @@ import Footer from "@/app/components/Footer/Footer";
 
 export const revalidate = 30;
 
-interface BlogPageProps {
-  params: { slug: string };
-}
-
 async function getData(slug: string) {
     const query = `
-        *[_type == 'blog' && slug.current == $slug][0] {
+        *[_type == 'blog' && slug.current == '${slug}'] {
             "currentSlug": slug.current,
             title,
             content,
             titleImage
-        }`;
-    const data = await client.fetch(query, { slug });
+        }[0]`;
+    const data = await client.fetch(query);
     return data;
 }
 
-export default async function BlogArticle({ params }: BlogPageProps) {
-    const data: blogArticle | null = await getData(params.slug);
-
-    if (!data) {
-        notFound(); // Trigger Next.js 404 page if data is null
-    }
-
+export default async function BlogArticle({params }: {params: { slug: string }}) {
+    const data: blogArticle = await getData(params.slug);
     return (
         <>
             <div className="my-5 w-full">
                 <h1>
-                    <span className="block text-base text-center text-primary font-semibold tracking-wide"></span>
+                    <span className="block text-base text-center text-primary font-semibold tracking-wide">
+
+                    </span>
                     <span className="mt-2 block text-3xl text-center text-primary font-bold tracking-tight">
                         {data.title}
                     </span>
                 </h1>
-                {data.titleImage && (
-                    <Image 
-                        src={urlFor(data.titleImage).url()} 
-                        alt="Blog image" 
-                        width={1080} 
-                        height={800}
-                        className="w-full max-h-[600px] rounded-lg object-cover mt-8 border" 
-                    />
-                )}
+                <Image 
+                    src={urlFor(data.titleImage).url()} 
+                    alt="Image" 
+                    width={1080} 
+                    height={800}
+                    className="w-full max-h-[600px] rounded-lg object-cover mt-8 border" 
+                />
                 <div className="mt-16 prose prose-md mx-auto">
                     <PortableText value={data.content} />
                 </div>
@@ -57,5 +47,5 @@ export default async function BlogArticle({ params }: BlogPageProps) {
             <Testimonials />
             <Footer />
         </>
-    );
+    )
 }
