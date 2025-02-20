@@ -20,8 +20,10 @@ async function getData(slug: string) {
     return data;
 }
 
-export default async function BlogArticle({params }: {params: { slug: string }}) {
-    const data: blogArticle = await getData(params.slug);
+export default async function BlogArticle({ params }: { params: Promise<{ slug: string }> }) {
+    const { slug } = await params;
+    const data: blogArticle = await getData(slug);
+    
     return (
         <>
             <div className="my-5 w-full">
