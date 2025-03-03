@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 import { urlFor } from "../../lib/sanity";
 import { Testimonial } from "../../lib/interface"
 import { useState } from "react";
-
+import { motion } from "framer-motion";
 
 
 export default function TestimonialsClient({ testimonials }: { testimonials: Testimonial[] }) {
@@ -27,12 +27,16 @@ export default function TestimonialsClient({ testimonials }: { testimonials: Tes
         <section className="testimonials">
             <div className="testimonials_container">
                 <div className="testimonials_heading mb-12 lg:mb-24">
-                    <h3 className="uppercase font-bold text-5xl text-center">
+                    <motion.h3 
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0, transition: { duration: 1.3 } }}
+                        viewport={{ once: true }}
+                        className="uppercase font-bold text-5xl text-center">
                         <span className="font-normal text-sm">
                             Testimonials <br />
                         </span>
                         Voices from the <br className="hidden lg:block"/><span>Compass&reg;</span> Community
-                    </h3>
+                    </motion.h3>
                 </div>
                 <div className="testimonials_images flex justify-center align-center gap-4 flex-wrap lg:flex-nowrap">
                    <div className="lg:hidden">
@@ -68,13 +72,17 @@ export default function TestimonialsClient({ testimonials }: { testimonials: Tes
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
                             </svg>
                     </Button>
-                    <div className="testimonials_quote">
+                    <motion.div 
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0, transition: { duration: 1.3 } }}
+                        viewport={{ once: true }}
+                        className="testimonials_quote">
                         <div className="svg_container w-[75px] mx-auto mb-8">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290 290"><path d="M22.12 145v97.65h97.65V145H70.95c0-26.92 21.9-48.82 48.82-48.82V47.35c-53.93 0-97.65 43.72-97.65 97.65zm245.76-48.82V47.35c-53.93 0-97.65 43.72-97.65 97.65v97.65h97.65V145h-48.82c-.01-26.92 21.89-48.82 48.82-48.82z" fill="#e0e0e0"></path></svg>
                         </div>
                         <p className="mx-12 mb-4 lg:text-xl text-pretty">{testimonials[currentIndex].quote}</p>
                         <p className="text-lg text-stone-900 mb-12">— <span className="font-bold">{testimonials[currentIndex].name}</span>, {testimonials[currentIndex].age} ({testimonials[currentIndex].location})</p>
-                    </div>
+                    </motion.div>
                     <Button 
                         onClick={getNextTestimonial}
                         className="bg-white text-stone-900 hover:bg-stone-100">

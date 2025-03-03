@@ -1,7 +1,9 @@
+"use client"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import Link from "next/link"
+import { motion } from "framer-motion"
 
 export default function Footer() {
     return (
@@ -9,11 +11,19 @@ export default function Footer() {
             <div className="footer_container">
                 <div className="head flex flex-wrap lg:flex-nowrap justify-between">
                     <div className="heading">
-                        <h3 className="text-5xl font-bold uppercase text-pretty max-w-[500px] mb-8">
+                        <motion.h3 
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0, transition: { duration: 1.3 } }}
+                            viewport={{ once: true }}
+                            className="text-5xl font-bold uppercase text-pretty max-w-[500px] mb-8">
                             Join Now and Stay in the Loop
-                        </h3>
+                        </motion.h3>
                     </div>
-                    <div className="sign-up max-w-[450px]">
+                    <motion.div 
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0, transition: { duration: 1.3 } }}
+                        viewport={{ once: true }}
+                        className="sign-up max-w-[450px]">
                         <p className="uppercase text-md mb-4">
                             Join Our Community for Exclusive Drops, Early Access, and Special Offers
                         </p>
@@ -29,9 +39,13 @@ export default function Footer() {
                                 </svg>
                             </Button>
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
-                <div className="image_container w-full max-h-[600px] rounded overflow-hidden mt-12 lg:mt-24 mb-4 flex justify-center align-center">
+                <motion.div 
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1, transition: { duration: 1.3 } }}
+                    viewport={{ once: true }}
+                    className="image_container w-full max-h-[600px] rounded overflow-hidden mt-12 lg:mt-24 mb-4 flex justify-center align-center">
                     <Image 
                         src="/footer-hero-image.jpg"
                         alt='Woman with arms extended'
@@ -39,7 +53,7 @@ export default function Footer() {
                         height={1920}
                         className="object-cover w-full"
                     />
-                </div>
+                </motion.div>
                 <div className="links_container w-full flex flex-wrap flex-col-reverse lg:flex-row lg:flex-nowrap justify-start lg:justify-between">
                     <div className="copy text-xs lg:text-base mb-2 mr-2">&copy; 2025 COMPASS&reg;</div>
                     <div className="links text-xs lg:text-base mb-2">
@@ -48,9 +62,13 @@ export default function Footer() {
                         <Link href="/privacy-policy" className="mr-2 uppercase">Privacy Policy</Link>
                     </div>
                 </div>
-                <div className="logo w-full flex justify-center">
+                <motion.div 
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0, transition: { duration: 1.3 } }}
+                    viewport={{ once: true }}
+                    className="logo w-full flex justify-center">
                     <span className="text-6xl mt-8 md:text-8xl lg:text-[160px] xl:text-[250px] tracking-wide font-bold">COMPASS&reg;</span>
-                </div>
+                </motion.div>
             </div>
         </footer>
     )

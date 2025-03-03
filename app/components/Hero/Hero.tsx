@@ -1,10 +1,16 @@
+"use client"
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function Hero() {
     return (
-        <section className="hero relative h-[90vh] w-full overflow-hidden rounded-xl mb-8">
+        <motion.section
+        initial={{ opacity: 0, y: 20, scale: 0.97 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{ duration: 1.3 }}
+        className="hero relative h-[90vh] w-full overflow-hidden rounded-xl mb-8">
             <Image
                 src="/wellness-hero-lotus.jpg"
                 width={1920}
@@ -16,7 +22,11 @@ export default function Hero() {
 
             <div className="absolute inset-0 bg-black/20" />
 
-            <div className="absolute bottom-10 px-4 z-10 max-w-2xl text-white">
+            <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.75 }}
+            className="absolute bottom-10 px-4 z-10 max-w-2xl text-white">
                 <h1 className="text-4xl font-bold sm:text-5xl lg:text-7xl lg:text-balanced">
                     Elevate Your Mind, Body, and Soul
                 </h1>
@@ -28,7 +38,7 @@ export default function Hero() {
                         <Link href="/about">Learn More</Link>
                     </Button>
                 </div>
-            </div>
-        </section>
+            </motion.div>
+        </motion.section>
     );
 }

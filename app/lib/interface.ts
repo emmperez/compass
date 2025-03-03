@@ -26,6 +26,11 @@ export interface featuredArticle {
     } | null
     categories: string[]
     smallDescription: string
+    titleImage?: {
+        asset: {
+            url: string
+        }
+    }
 }
 
 export interface Testimonial {
@@ -34,4 +39,11 @@ export interface Testimonial {
     age: number
     quote: string
     image: { asset: { url: string } }
+}
+
+export interface Promo {
+    title: string
+    currentSlug: string
+    titleImage: { asset: { url: string } }
+    smallDescription: string
 }

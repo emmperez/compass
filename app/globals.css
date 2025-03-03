@@ -36,3 +36,8 @@
     background-color: #fbc1d4;
   }
 }
+
+.text-reveal {
+  opacity: 0;
+  transform: translateY(100%);
+}
