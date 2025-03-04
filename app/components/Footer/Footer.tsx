@@ -7,7 +7,7 @@ import { motion } from "framer-motion"
 
 export default function Footer() {
     return (
-        <motion.footer className="footer bg-stone-950 text-white px-4 py-8 rounded-lg mb-4"
+        <motion.footer className="footer bg-stone-950 text-white px-4 py-8 rounded-lg mb-16"
             initial={{ y: 150, scale: 0.97}}
             whileInView={{ y: 0, scale: 1, transition: { duration: 1.3 } }}
             viewport={{ once: false }}
