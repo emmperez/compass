@@ -65,7 +65,8 @@ export default function About() {
                         </div>
                         <Image 
                         src="/narajiva-bnwt6jpBND4-unsplash.jpg" 
-                        alt="Hero" 
+                        alt="Hero"
+                        priority={true} 
                         fill
                         className="object-cover rounded-t-2xl" 
                         />

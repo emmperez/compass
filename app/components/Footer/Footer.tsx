@@ -7,7 +7,11 @@ import { motion } from "framer-motion"
 
 export default function Footer() {
     return (
-        <footer className="footer bg-stone-950 text-white px-4 py-8 rounded-lg mb-4">
+        <motion.footer className="footer bg-stone-950 text-white px-4 py-8 rounded-lg mb-4"
+            initial={{ y: 150, scale: 0.97}}
+            whileInView={{ y: 0, scale: 1, transition: { duration: 1.3 } }}
+            viewport={{ once: false }}
+        >
             <div className="footer_container">
                 <div className="head flex flex-wrap lg:flex-nowrap justify-between">
                     <div className="heading">
@@ -70,6 +74,6 @@ export default function Footer() {
                     <span className="text-6xl mt-8 md:text-8xl lg:text-[160px] xl:text-[250px] tracking-wide font-bold">COMPASS&reg;</span>
                 </motion.div>
             </div>
-        </footer>
+        </motion.footer>
     )
 }
