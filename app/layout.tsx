@@ -23,13 +23,13 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <ReactLenis root>
     <html lang="en" suppressHydrationWarning data-page={isAboutPage ? 'about' : undefined}>
         <body>
-          {isLoading ? <Loader /> : (
+          {isLoading && !isAboutPage ? <Loader /> : (
               <>
                 <Navbar />
                 <main className={`mx-auto ${isAboutPage ? 'w-full' : 'w-11/12'}`}>{children}</main>
-                {isAboutPage && <div className="w-11/12 mx-auto pt-6"><Footer /></div>}
               </>
           )}
+          {isAboutPage && <div className="w-11/12 mx-auto pt-6"><Footer /></div>}
         </body>
     </html>
     </ReactLenis>
