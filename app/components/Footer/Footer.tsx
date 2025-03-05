@@ -46,8 +46,8 @@ export default function Footer() {
                     </motion.div>
                 </div>
                 <motion.div 
-                    initial={{ opacity: 0, y: 200 }}
-                    whileInView={{ opacity: 1, y: 0, transition: { duration: 1.3 } }}
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1, transition: { duration: 1.3 } }}
                     className="image_container w-full max-h-[600px] rounded overflow-hidden mt-12 lg:mt-24 mb-4 flex justify-center align-center">
                     <Image 
                         src="/footer-hero-image.jpg"
@@ -59,7 +59,7 @@ export default function Footer() {
                 </motion.div>
                 <motion.div className="links_container w-full flex flex-wrap flex-col-reverse lg:flex-row lg:flex-nowrap justify-start lg:justify-between"
                     initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0, transition: { duration: 1.3, delay: 0.25 } }}
+                    whileInView={{ opacity: 1, y: 0, transition: { duration: 1.3 } }}
                     viewport={{ once: true }}
                     >
                     <div className="copy text-xs lg:text-base mb-2 mr-2">&copy; 2025 COMPASS&reg;</div>
@@ -71,7 +71,7 @@ export default function Footer() {
                 </motion.div>
                 <motion.div 
                     initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0, transition: { duration: 1.3, delay: 0.25 } }}
+                    whileInView={{ opacity: 1, y: 0, transition: { duration: 1.3 } }}
                     viewport={{ once: true }}
                     className="logo w-full flex justify-center">
                     <span className="text-6xl mt-8 md:text-8xl lg:text-[160px] xl:text-[250px] tracking-wide font-bold">COMPASS&reg;</span>
