@@ -103,7 +103,7 @@ export default function Loader() {
                 <div className="logo-container absolute w-[100%] h-[100%] z-101 flex justify-center items-center gap-4">
                     <p className="count text-white text-xs xl:text-xl font-bold">{count}</p>
                     <div className="logo relative overflow-hidden">
-                        <h1 className="text-white text-2xl xl:text-8xl font-black" id="target">COMPASS&reg;</h1>
+                        <h1 className="text-white text-2xl xl:text-8xl" id="target"><span className="font-black">COMPASS</span>&reg;</h1>
                     </div>
                 </div>
             </div>
