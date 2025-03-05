@@ -63,6 +63,7 @@ export default function Loader() {
         const chars = text.chars
 
         tl.from(chars, {
+            autoAlpha: 0,
             y: 100,
             duration: 1,
             stagger: 0.025,
